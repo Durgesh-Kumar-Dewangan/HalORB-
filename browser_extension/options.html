@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Tray Status Indicator - Settings</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; padding: 20px; width: 420px; }
+    h2 { font-size: 16px; margin-bottom: 4px; }
+    p.hint { color: #555; font-size: 12px; margin-top: 2px; }
+    label { display: block; margin-top: 16px; font-weight: 600; font-size: 13px; }
+    input[type=text] { width: 100%; padding: 6px; box-sizing: border-box; margin-top: 4px; }
+    button { margin-top: 16px; padding: 8px 16px; }
+    #status { margin-top: 10px; font-size: 13px; }
+    a { color: #1a73e8; }
+  </style>
+</head>
+<body>
+  <h2>Tray Status Indicator - Website Safety Reporter</h2>
+  <p class="hint">This extension reports the active tab's safety status to the desktop tray app running on this PC.</p>
+
+  <label for="token">Pairing token</label>
+  <input type="text" id="token" placeholder="Paste the token shown in the tray app's menu" />
+  <p class="hint">Right-click the Tray Status Indicator icon &rarr; "Show pairing token" to get this.</p>
+
+  <label for="apiKey">Google Safe Browsing API key (optional)</label>
+  <input type="text" id="apiKey" placeholder="Leave blank to use heuristics only" />
+  <p class="hint">
+    Free to obtain from the
+    <a href="https://developers.google.com/safe-browsing/v4/get-started" target="_blank">Safe Browsing API docs</a>.
+    Without a key, the extension still flags suspicious URLs using local heuristics
+    (IP-address links, punycode/look-alike domains, brand-impersonation patterns, risky TLDs).
+  </p>
+
+  <button id="save">Save</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Tray Status Indicator - Website Safety Reporter",
+  "version": "1.0.0",
+  "description": "Checks the active tab's URL for safety and reports status to the local Tray Status Indicator desktop app (orange dot = unsafe site).",
+  "permissions": ["tabs", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "https://safebrowsing.googleapis.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Tray Status Indicator - Website Safety"
+  }
+}
